@@ -10,16 +10,6 @@ imageUrl = "https://imgflip.com/s/meme/"
 memeGenerator = "https://imgflip.com/memegenerator"
 
 
-
-# for i in range(21):
-#     getUrl = url+str(i+1)
-#     htmlContent = requests.get(getUrl).content
-#     soup = BeautifulSoup(htmlContent,'html.parser')
-#     for imgLinks in soup.findAll("a",{"class":"mt-caption l but"}):
-#         name = imgLinks['title'].replace(" Meme Generator","")
-#         link = imageUrl+imgLinks['href'].split("/")[2]+".jpg"
-#         generator = memeGenerator+"/"+imgLinks['href'].split("/")[2]
-#         imgLinkDict[str(name)]={'Title':name,'Image Link':link,'Template Link':generator}
 for i in range(21):
     getUrl = url+str(i+1)
     htmlContent = requests.get(getUrl).content
