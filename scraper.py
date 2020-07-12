@@ -9,7 +9,7 @@ url = "https://imgflip.com/memetemplates?page="
 imageUrl = "https://imgflip.com/s/meme/"
 memeGenerator = "https://imgflip.com/memegenerator"
 
-
+k = 1
 for i in range(21):
     getUrl = url+str(i+1)
     htmlContent = requests.get(getUrl).content
@@ -20,8 +20,8 @@ for i in range(21):
         name = imgLinks['title'].replace(" Meme Generator","")
         link = imageUrl+imgLinks['href'].split("/")[2]+".jpg"
         generator = memeGenerator+"/"+imgLinks['href'].split("/")[2]
-        imgLinkDict[str(name)]={'Title':name,'Image Link':link,'Template Link':generator,'Preview Image Link':previewImage}
-        
+        imgLinkDict['Image'+str(k)]={'Title':name,'Image Link':link,'Template Link':generator,'Preview Image Link':previewImage}
+        k = k+1
 	
 
 
